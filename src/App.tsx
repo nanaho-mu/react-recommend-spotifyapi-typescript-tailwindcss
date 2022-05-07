@@ -6,6 +6,9 @@ import { RecommendSongs } from './RecommendSongs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './index.css';
+import { RecomendTrackItem } from "./types/RecomendTrackItem"
+import { paramsType } from "./types/paramsType";
+import { searchArtistsResponse } from "./types/searchArtistsResponse"
 
 
 const spotifyApi = new SpotifyWebApi({
@@ -31,13 +34,13 @@ function App() {
   const [token, setToken] = useState<string | null>("")
   const [search, setSearch] = useState<string>("")
   const [artists, setArtists] = useState<string>("")
-  const [recommendHappyTrack, setRecommendHappyTrack] = useState([])
-  const [recommendDarkTrack, setRecommendDarkTrack] = useState([])
-  const [recommendEmoTrack, setRecommendEmoTrack] = useState([])
+  const [recommendHappyTrack, setRecommendHappyTrack] = useState<RecomendTrackItem[]>([])
+  const [recommendDarkTrack, setRecommendDarkTrack] = useState<RecomendTrackItem[]>([])
+  const [recommendEmoTrack, setRecommendEmoTrack] = useState<RecomendTrackItem[]>([])
 
 
 
-  const paramsHappy = {
+  const paramsHappy: paramsType = {
     seed_artists: artists,
     min_valence: 0.8,
     max_valence: 1.0,
@@ -48,7 +51,7 @@ function App() {
     min_key: 1,
     max_key: 10,
   }
-  const paramsSad = {
+  const paramsSad: paramsType = {
     seed_artists: artists,
     max_valence: 0.3,
     min_valence: 0.0,
@@ -59,7 +62,7 @@ function App() {
     // min_key:7,
     // max_key:10,
   }
-  const paramsEmo = {
+  const paramsEmo: paramsType = {
     seed_artists: artists,
     max_valence: 0.8,
     min_valence: 0.5,
