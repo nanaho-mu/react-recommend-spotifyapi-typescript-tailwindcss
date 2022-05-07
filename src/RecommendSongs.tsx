@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, FC } from "react"
 import ReactAudioPlayer from "react-audio-player"
 import axios from "axios"
 
@@ -9,8 +9,17 @@ type SpotifyRecommendResponse = {
   tracks: RecomendTrackItem[];
 }
 
+type Props = {
+  token: string;
+  artists: string;
+  setRecommendTrack: any;
+  recommendTrack: RecomendTrackItem[];
+  params: paramsType;
+  type: string;
+}
 
-export const RecommendSongs = (props) => {
+
+export const RecommendSongs: FC<Props> = (props) => {
   const { token, artists, setRecommendTrack, recommendTrack, params, type } = props
   useEffect(() => {
     /* 似ている曲を取得 START */
