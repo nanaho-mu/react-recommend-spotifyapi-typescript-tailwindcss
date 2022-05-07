@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SpotifyWebApi from "spotify-web-api-node"
 import { RecommendSongs } from './RecommendSongs';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './index.css';
 import { RecomendTrackItem } from "./types/RecomendTrackItem"
@@ -117,28 +117,28 @@ function App() {
   // console.log(artists)
 
   return (
-    <div className="App bg-black" style={{ width: "100vw", height: "100vh" }}>
-      <header className="App-header m-10 bg-black">
-        <h1 className="pt-3 text-center text-success">Recommend By Tune</h1>
-        <h1 className="pt-3 text-center text-success">With Spotify</h1>
+    <div className="App bg-black w-screen h-screen" >
+      <header className="">
+        <h1 className="text-green-700 text-center p-5 text-3xl font-bold">Recommend By Tune</h1>
+        <h1 className="text-green-700 text-center text-3xl font-bold">With Spotify</h1>
         {!token ?
-          <div className="text-center m-5"><a className="btn btn-success p-3 text-white" role="button" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
+          <div className="m-5"><a className="flex justify-center place-content-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded" role="button" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
             "%20"
           )}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></div>
 
-          : <div className="text-right"><button className="btn btn-success" type="button" onClick={logout}>Logout</button></div>}
+          : <div className=""><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex justify-center" type="button" onClick={logout}>Logout</button></div>}
       </header>
       {token ?
         <>
-          <form className="d-flex flex-row bd-highlight mb-3 mt-5 text-muted" onSubmit={searchArtists}>
+          <form className="" onSubmit={searchArtists}>
 
-            <input className="form-control mx-10" style={{ width: "300px" }} placeholder="search" value={search} onChange={e => setSearch(e.target.value)} />
-            <button className="btn btn-success" type={"submit"} >Search</button>
+            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" style={{ width: "300px" }} placeholder="search" value={search} onChange={e => setSearch(e.target.value)} />
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type={"submit"} >Search</button>
           </form>
-          <div className="d-flex flex-column bg-black" style={{ width: "100vw", height: "100vh" }}>
+          <div className="flex bg-black w-screen h-screen">
             <div className="bg-black">
               <div className="container">
-                <div className="row d-flex flex-row bd-black mt-5 text-muted flex-grow-1" style={{ overflowY: "auto", width: "100vw", height: "100vh" }}>
+                <div className="w-screen h-screen" style={{ overflowY: "auto" }}>
                   <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendHappyTrack} recommendTrack={recommendHappyTrack} params={paramsHappy} type={"Happy"} />
                   <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendDarkTrack}
                     recommendTrack={recommendDarkTrack} params={paramsSad} type={"Sad"} />
@@ -150,7 +150,7 @@ function App() {
             </div>
           </div>
         </>
-        : <h4 className="p-3 text-white text-center bg-black">Please login!</h4>}
+        : <h4 className="bg-black">Please login!</h4>}
     </div>
   )
 }
