@@ -2,12 +2,19 @@ import React, { useEffect } from "react"
 import ReactAudioPlayer from "react-audio-player"
 import axios from "axios"
 
+import { paramsType } from "./types/paramsType";
+import { RecomendTrackItem } from "./types/RecomendTrackItem"
+
+type SpotifyRecommendResponse = {
+  tracks: RecomendTrackItem[];
+}
+
 
 export const RecommendSongs = (props) => {
   const { token, artists, setRecommendTrack, recommendTrack, params, type } = props
   useEffect(() => {
     /* 似ている曲を取得 START */
-    axios.get(`https://api.spotify.com/v1/recommendations?limit=10&market=US`, {
+    axios.get<SpotifyRecommendResponse>(`https://api.spotify.com/v1/recommendations?limit=10&market=US`, {
       headers: {
         Authorization: "Bearer " + token,
       },
