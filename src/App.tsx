@@ -101,7 +101,7 @@ function App() {
 
   const searchArtists = async (e) => {
     e.preventDefault()
-    const { data } = await axios.get("https://api.spotify.com/v1/search", {
+    const { data } = await axios.get<searchArtistsResponse>("https://api.spotify.com/v1/search", {
       headers: {
         Authorization: `Bearer ${token}`
       },
