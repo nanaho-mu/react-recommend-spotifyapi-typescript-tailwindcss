@@ -16,7 +16,8 @@ https://react-recommend-spotifyapi-typescript-tailwindcss-cxo6fyskr.vercel.app/
 > URL:https://developer.spotify.com/community/news/2021/05/27/improving-the-developer-and-user-experience-for-third-party-apps/
 
 # GIF
-![RecommendByTune](https://user-images.githubusercontent.com/72216137/166636649-4ef0c8ee-1041-42e6-858d-dc5725daff8b.gif)
+
+![spotify_clear_typescript](https://user-images.githubusercontent.com/72216137/167285099-c0dbfc24-51f6-4a2c-be30-21ab5b9e9420.gif)
 
 # 使用技術
 - Typescript
