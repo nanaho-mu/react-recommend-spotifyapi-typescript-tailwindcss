@@ -137,8 +137,8 @@ function App() {
           </form>
           <div className="flex bg-black w-screen h-screen">
             <div className="bg-black">
-              <div className="container">
-                <div className="w-screen h-screen" style={{ overflowY: "auto" }}>
+              <div className="container bg-black">
+                <div className="bg-black m-8 my-10 w-screen h-screen flex justify-evenly content-evenly" style={{ overflowY: "auto" }}>
                   <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendHappyTrack} recommendTrack={recommendHappyTrack} params={paramsHappy} type={"Happy"} />
                   <RecommendSongs token={token} artists={artists} setRecommendTrack={setRecommendDarkTrack}
                     recommendTrack={recommendDarkTrack} params={paramsSad} type={"Sad"} />

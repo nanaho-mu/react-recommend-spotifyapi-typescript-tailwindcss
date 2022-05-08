@@ -50,7 +50,7 @@ export const RecommendSongs: FC<Props> = (props) => {
   }, [artists, token]);
 
   return (
-    <div className="text-gray-400 flex-row col" style={{ width: "100vw", height: "100vh" }}>
+    <div className="text-gray-400" style={{ width: "100vw", height: "100vh" }}>
       <h2 className="text-green-800 text-3xl font-bold">{type} Songs</h2>
       {recommendTrack.map(({ id, artists, name, preview_url, album }) => (
 
@@ -60,8 +60,8 @@ export const RecommendSongs: FC<Props> = (props) => {
         >
           <div className="flex flex-row bd-highlight mt-5 mb-3 text-muted">
 
-            <img src={album.images[1].url} style={{ height: "64px", width: "64px" }} alt="アルバム画像" />
-            <div className="mx-4">
+            <img src={album.images[1].url} className="w-16 h-16" alt="アルバム画像" />
+            <div className="m-4">
               <div className="text-gray-400">{artists[0].name}</div>
               <div className="text-gray-400">{name}</div>
             </div>
