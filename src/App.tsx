@@ -122,15 +122,17 @@ function App() {
       <h1 className="text-green-700 text-center pt-10  pb-5 text-5xl font-bold">Recommend By Tune</h1>
       <h1 className="text-green-700 text-center text-5xl font-bold">With Spotify</h1>
       {!token ?
-        <div className="m-5"><a className="flex m-auto my-52 w-48 place-content-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded" role="button" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
-          "%20"
-        )}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></div>
+        <div className="flex flex-col items-center justify-center m-28">
+          <img className="w-52 mb-5" src="https://links.papareact.com/9xl" alt="" />
+          <a className="mt-10 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded" role="button" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
+            "%20"
+          )}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></div>
 
-        : <div className=""><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex justify-center" type="button" onClick={logout}>Logout</button></div>}
+        : <div className="flex justify-end mr-40"><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type="button" onClick={logout}>Logout</button></div>}
       {/* </header> */}
       {token ?
         <>
-          <form className="" onSubmit={searchArtists}>
+          <form className="flex justify-center" onSubmit={searchArtists}>
 
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" style={{ width: "300px" }} placeholder="search" value={search} onChange={e => setSearch(e.target.value)} />
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type={"submit"} >Search</button>
