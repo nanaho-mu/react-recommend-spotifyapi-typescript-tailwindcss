@@ -50,20 +50,20 @@ export const RecommendSongs: FC<Props> = (props) => {
   }, [artists, token]);
 
   return (
-    <div className="text-secondary col" style={{ width: "100vw", height: "100vh" }}>
-      <h2 className="text-success">{type} Songs</h2>
+    <div className="text-gray-400" style={{ width: "100vw", height: "100vh" }}>
+      <h2 className="text-green-800 text-3xl font-bold ml-10">{type} Songs</h2>
       {recommendTrack.map(({ id, artists, name, preview_url, album }) => (
 
         <div
-          className="mt-10"
+          className="m-10 h-36"
           key={id}
         >
-          <div className="d-flex flex-row bd-highlight mt-5 mb-3 text-muted">
+          <div className="flex flex-row bd-highlight mt-5 mb-3 text-muted">
 
-            <img src={album.images[1].url} style={{ height: "64px", width: "64px" }} alt="アルバム画像" />
-            <div className="mx-4">
-              <div className="text-secondary ">{artists[0].name}</div>
-              <div className="text-muted">{name}</div>
+            <img src={album.images[1].url} className="w-16 h-16 mb-3" alt="アルバム画像" />
+            <div className="mx-4 mt-1">
+              <div className="text-gray-400">{artists[0].name}</div>
+              <div className="text-gray-400">{name}</div>
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export const RecommendSongs: FC<Props> = (props) => {
               src={preview_url}
               controls
             />
-            : <p>No preview music</p>}
+            : <p className="py-4">No preview music</p>}
         </div>
       ))}
     </div>
