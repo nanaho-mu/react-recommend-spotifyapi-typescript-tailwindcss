@@ -5,7 +5,6 @@ Recommend By Tune With Spotify
 <br>
 react-recommend-spotifyapiをJavascript->Typescript, Bootstrap->tailwindcssで書き直しました。
 # URL
-https://react-recommend-spotifyapi-typescript-tailwindcss-cxo6fyskr.vercel.app/
 > note
 > <br>
 > 2021/05/27における、Spotify Apiのプラットフォームの変更により、新しいアプリは「開発モード」になり、ユーザーが25人以下の場合アクセスが制限されます 。そのため、現状ユーザーが本アプリにアクセスするには、開発者がダッシュボードにおいて、ユーザーの名前とメールアドレスを追加する必要があります。
